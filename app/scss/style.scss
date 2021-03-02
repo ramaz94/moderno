@@ -341,9 +341,48 @@ button.mixitup-control-active {
     }
 }
 
+//end advantages
 
+//start author 
 
+.author {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:  center;
+    min-height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.author__box {
+        max-width: 650px;
+        width: 100%;
+        min-height: 215px;
+        background-color: $green;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.author__title {
+    font-size: 30px;
+    line-height: 36px;
+    color: #fff;
+    max-width: 275px;
+    span {
+        @include f700;
+    }
+}
+
+.author__link {
+    font-size: 18px;
+    line-height: 36px;
+    color: $bg-blue;
+    background-color: #fff;
+    margin-left: 30px;
+    padding: 14px 40px;
+}
 
 
 
