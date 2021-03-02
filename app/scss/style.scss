@@ -384,5 +384,35 @@ button.mixitup-control-active {
     padding: 14px 40px;
 }
 
+//end author
+//start tutorial 
+
+.tutorial {
+    padding: 120px 0;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        max-width: 370px;
+        width: 100%;
+    }
+    &__item-img {
+        min-height: 270px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    &__item-title {
+        @include f700;
+        font-size: 24px;
+        background-color: #f8f8f8;
+        text-align: center;
+        padding: 38px 20px;
+        a {
+            color: $bg-blue;
+        }
+    }
+}
 
 
