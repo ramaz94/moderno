@@ -414,5 +414,178 @@ button.mixitup-control-active {
         }
     }
 }
+//end tutorial 
 
+//start footer 
+.footer {
+    background-color: $bg-blue;
+    color: #fff;
+    &__inner {
+        padding: 100px 0 80px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.footer__col {
+    max-width: 270px;
+    width: 100%;
+    &-text {
+        color: #b7c3c8;
+        margin-bottom: 30px; 
+    }
+    &-menu {
+        max-width: 220px;
+    }
+}
+
+
+.footer__col-title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    padding-bottom: 22px;
+    margin-bottom: 28px;
+    position: relative;
+    &::after {
+        content: '';
+        height: 3px;
+        width: 50px;
+        position: absolute;
+        background-color: $green;
+        left: 2px;
+        bottom: 0;
+    }
+}
+
+.footer__info {
+    color: #fff;
+    margin-top: 18px;
+    @include f500;
+    padding-left: 30px;
+    position: relative;
+    &::before {
+        content: '\f041';
+        font-family: 'icomoon';
+        color: $green;
+        position: absolute;
+        left: 0;
+        font-size: 18px;
+    }
+    &-phone::before {
+        content: "\f095";
+    }
+}
+
+.footer__col-list {
+    position: relative;
+    a {
+        color: #b7c3c8;
+        padding-left: 22px;
+        margin-bottom: 13px;
+        position: relative;
+        &::before {
+            content: "\f105";
+            font-family: 'icomoon';
+            color: $green;
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+        }
+    }
+}
+.footer__social-link {
+    margin-bottom: 33px;
+    li {
+        display: inline-block;
+        & + li {
+            margin-left: 7px;
+        }
+    }
+    a {
+        width: 28px;
+        height: 28px;
+        background-image: url(../img/css_sprites.png);
+    }
+}
+
+.link-twitter { 
+    background: url('css_sprites.png') -28px -0;
+}
+
+.link-youtube {
+    background: url('css_sprites.png') -0 -28px;
+}
+
+.link-pinterest {
+    background: url('css_sprites.png') -28px -28px;
+}
+
+.link-linkedin {
+    background: url('css_sprites.png') -56px -0;
+}
+
+
+.footer__form {
+    &-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    form {
+        position: relative;
+    }
+    input {
+        display: block;
+        background-color: #2f3c43;
+        font-size: 14px;
+        height: 40px;
+        padding: 0px 50px 0px 13px;
+        width: 100%;
+        border: none;
+        color: #fff;
+        &::placeholder {
+            color: #697378;
+        }
+    }
+    button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $green;
+        border: none;
+        height: 40px;
+        width: 43px;
+        cursor: pointer;
+        &::before {
+            content: '\f124';
+            position: absolute;
+            font-family: 'icomoon';
+            color: #fff;
+            font-size: 20px;
+            top: 7px;
+            left: 13px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.footer__copy-text {
+    text-align: center;
+    color: #b7c3c8;
+    font-size: 15px;
+    padding: 25px 0 25px;
+}
+
+
+.footer_copy {
+    border-top: 1px solid #b7c3c8;
+}
 
