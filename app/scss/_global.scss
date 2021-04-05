@@ -27,6 +27,7 @@ body {
     line-height: 24px;
     color: $text;
     font-weight: 400;
+    overflow-x: hidden;
 }
 
 .container {
@@ -64,4 +65,28 @@ button:focus {
 .rate-star {
     display: inline-block;
     margin-right: 13px;
+}
+
+.angel-right {
+    position: relative;
+    padding-left: 15px;
+    &::before {
+        content: "\f105";
+        font-family: 'icomoon';
+        position: absolute;
+        color: $green;
+        font-size: 14px;
+        left: 0;
+    }
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
 }

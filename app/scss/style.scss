@@ -29,7 +29,8 @@
 .header__btn-login {
     background-color: $green;
 }
-.header__btn-registr {
+.header__btn-registr,
+.header__btn-logout{
     background-color: $red;
     margin-left: 7px;
 }
@@ -55,14 +56,294 @@
 }
 
 .header__circle {
+    &.active {
+        display: block;
+    }
+    display: none;
     height: 34px;
     width: 34px;
     border-radius: 50%;
     background-color: #f5f5f5;
-    & + .header__circle {
-        margin-left : 15px;
+    position: relative;
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #a0a0a0;
+        font-size: 14px;
+    }
+    span {
+        position: absolute;
+        right: -7px;
+        top: -7px;
+        height: 18px;
+        width: 18px;
+        color: #fff;
+        background-color: #ef6c00;
+        border-radius: 50%;
+        font-size: 11px;
+        text-align: center;
+        line-height: 18px;
     }
 }
+
+.notification {
+    span {
+        background-color: #fcb322;
+    }
+}
+.message {
+    span {
+        background-color: #ef6c00;
+    }
+}
+.basket {
+    margin-right: 20px;
+    span {
+        background-color: #95c85a;
+    }
+}
+
+
+.header__box {
+    display: flex;
+    align-items: center;
+}
+
+.user {
+    margin-right: 20px;
+    padding-right: 20px;
+    position: relative;
+    &::before {
+        content: "\f107";
+        font-family: 'icomoon';
+        position: absolute;
+        right: 0;
+        font-size: 16px;
+        color: #707070;
+
+    }
+    &__inner{
+        display: flex;
+        align-items: center;
+    }
+    &__img {
+        margin-right: 15px;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        overflow: hidden; 
+    }
+    &__info {
+        line-height: 24px;
+        margin-left: 14px;
+        font-size: 14px;
+        @include f500;
+    }
+    &__name {
+        color: #222;
+    }
+    &__money {
+        color: $green;
+        @include f700;   
+    }
+    
+}
+
+.header__btn-login--off {
+    display: none;
+}
+
+.header__btn-logout {
+    display: none;
+    &.header__btn-login--on {
+        display: block;
+    }
+}
+
+.user__box,
+.basket__box,
+.notification__box,
+.message__box {
+    z-index: 100;
+    position: relative;
+    height: 90px;
+    margin-top: 40px;
+    &:hover {
+        .user__menu {
+            height: auto;
+            padding: 20px;
+            border: 1px solid rgb(204, 204, 204);
+            overflow: auto;
+        }
+        .circle__menu {
+            height: auto;
+            border: 1px solid rgb(204, 204, 204);
+            overflow: auto;
+        }
+    }
+}
+
+.user__menu {
+    width: 160px;
+    background-color: #fff;
+    border: 0px solid rgb(204, 204, 204);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    height: 0px;
+    overflow: hidden;
+    transition: all 0.3s;
+    padding: 0 20px;
+    a {
+        font-size: 12px;
+        color: #546e7a;
+        margin-bottom: 10px;
+    }
+
+}
+
+.basket__box,
+.message__box,
+.notification__box {
+    &:hover {
+        .header__circle::before {
+            color: $bg-blue;
+        }
+    }
+    margin-top: 55px;
+    margin-left: 15px;
+    &:hover {
+        .circle__menu {
+            overflow: hidden;
+            height: auto;
+            border: 1px solid rgb(204, 204, 204);
+        }
+        .circle__item {
+            padding: 23px;
+            border-width: 1px ;
+        }
+    }
+}
+.circle__menu {
+    position: absolute;
+    border: 0px solid rgb(204, 204, 204);
+    top: 62px;
+    right: 0px;
+    height: 0px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.circle__item {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    width: 270px;
+    background-color: #fff;
+    border: 0px solid rgb(204, 204, 204);
+    padding: 0 23px;
+    border-top: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s;
+    &::before {
+        position: absolute;
+        right: 28px;
+        top: 27px;
+        font-size: 16px;
+        color: #b0bec5;
+    }
+}
+.circle__img {
+    margin-right: 15px;
+}
+
+.circle__info {
+    &-name {
+        @include f500;
+        color: $bg-blue;
+    }
+    &-thema {
+            color: $green;
+    }
+    &-price {
+        @include f500;
+        color: #000;
+        font-size: 16px;
+    }
+    &-date {
+        font-size: 12px;
+        color: #707070;
+    }
+}
+
+.basket__summ {
+    padding: 16px 17px 12px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    .basket__title {
+        display: flex;
+        justify-content: space-between;
+        @include f700;
+        padding-left: 13px;
+        padding-right: 22px;
+        margin-bottom: 15px;
+        color: #263238;
+        font-size: 16px;
+    }
+}
+
+.basket__btn {
+    color: #fff;
+    background-color: rgb(149, 200, 90);
+    @include f700;
+    width: 102px;
+    font-size: 14px;
+    text-align: center;
+    padding: 12px 5px;
+    line-height: 14px;
+}
+
+.basket__btn-checkout {
+    width: 120px;
+    background-color: #e85647;
+    margin-left: 6px;
+
+}
+
+
+
+
+.notification__box,.message__box {
+    margin-left: 15px;
+}
+
+.message__menu,
+.notification__menu {
+    .circle__img {
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 20px;
+    }
+    .circle__info {
+        line-height: 18px;
+    }
+    
+}
+
+.icons-color::before {
+    color: $tomato;
+}
+
+.header__btn-menu,
+.menu__btn {
+    display: none;
+}
+  
 
 // end header
 
@@ -580,13 +861,6 @@ button.mixitup-control-active {
 
 
 
-
-
-
-
-
-
-
 .footer__copy-text {
     text-align: center;
     color: #b7c3c8;
@@ -599,3 +873,5 @@ button.mixitup-control-active {
     border-top: 1px solid #b7c3c8;
 }
 
+
+@import '_media';
