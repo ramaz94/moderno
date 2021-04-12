@@ -347,6 +347,113 @@
 
 // end header
 
+// start modal
+
+    #modal {
+        background-color: $green;
+        max-width: 730px;
+        width: 100%;
+        padding: 90px 0 100px;
+    }
+    .login__title {
+        font-size: 48px;
+        line-height: 36px;
+        color: #fff;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+    .login__wrapper {
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            input {
+                display: block;
+                width: 100%;
+                height: 43px;
+                margin-bottom: 8px;
+                border: none;
+                outline: none;
+                background-color: #76ae36;
+                color: #fff;
+                padding-left: 40px;
+                font-size: 14px;
+                &::placeholder {
+                    color: #fff;
+                    font-size: 14px;
+                }
+            }
+            button {
+                margin-top: 19px;
+            }
+        }
+    }
+
+    
+
+    label {
+        position: relative;
+        &::before {
+            position: absolute;
+            font-family: 'icomoon';
+            font-size: 14px;
+            color: #fff;
+            left: 18px;
+            z-index: 1;
+            top: 10px;
+        }
+
+    }
+
+    .login__label-name::before {
+        content: "\f007";
+    }
+
+    .login__label-pass::before {
+        content: "\f023";
+    }
+
+    button {
+        margin-top: 19px;
+        padding: 18px 16px;
+        background-color: #fff;
+        width: 140px;
+        text-transform: uppercase;
+        border: none;
+        margin-right: 10px;
+        @include f700;
+        color: #000;
+        text-align: center;
+        box-shadow: 0px 2px 2px 0px rgba(118, 174, 54, 0.75);
+    }
+    .lost-pass {
+        display: block;
+        margin-top: 20px;
+        color: #fff;
+        font-size: 18px;
+    }
+    .create {
+        color: #fff;
+        background-color: rgb(118, 174, 54);
+        margin-top: 19px;
+        padding: 14px 16px;
+        font-size: 18px;
+        width: 246px;
+        text-align: center;
+        position: relative;
+        padding-left: 45px;
+        &::before {
+            font-family: 'icomoon';
+            content: "\f044";
+            position: absolute;
+            left: 35px;
+            top: 15px;
+        }
+    }
+      
+// end modal
+
 //start search
 
 
