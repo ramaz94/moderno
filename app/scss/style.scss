@@ -532,6 +532,10 @@
     padding: 110px 0px;
     background-color: $grey;
 }
+.products__wrapper, .product-slider__wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+}
 
 .products__inner-btm {
     text-align: center;
@@ -551,12 +555,19 @@
 .products__inner-box {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    margin-left: -30px;
+}
+
+.products .products__item {
+    flex-basis: calc(25% - 30px);
+    margin-left: 30px;
 }
 
 .products__item {
     max-width: 442px;
     width: 100%;
+
     box-shadow: 0px 1px 2px 0px rgba(205, 214, 222, 0.75);
     background-color: #fff;
     margin-bottom: 30px;
@@ -1489,6 +1500,9 @@ button.mixitup-control-active {
         }
 
     }
+    .contacts__info {
+        margin-right: 20px;
+    }
 
     .contacts__info-item {
         max-width: 270px;
@@ -1552,6 +1566,11 @@ button.mixitup-control-active {
         display: flex;
         justify-content: space-between;
         margin-bottom: 30px;
+        input {
+            & + input {
+                margin-left: 10px;
+            }
+        }
     }
     .contacts__form {
         max-width: 728px;
@@ -1701,9 +1720,8 @@ button.mixitup-control-active {
             color: #707070;
         }
     }
-    .update___btn {
-        width: 108px;
-        padding: 15px 5px;
+    .update___btn, .submit__btn {
+        padding: 15px 35px;
         color: #fff;
         background-color: $green;
         border: none;  
@@ -1747,8 +1765,7 @@ button.mixitup-control-active {
     }
     .profile {
         background-color: #f4f6f5;
-        padding: 45px 115px;
-        margin-right: 30px;
+        padding: 45px 0 115px;
     }
     .profile__aside {
         max-width: 270px;
@@ -1944,6 +1961,275 @@ button.mixitup-control-active {
     
 
 // end profile
+
+// start upload-products
+
+.upload {
+    background-color: #f4f6f5;
+    padding: 40px 0 110px;
+}
+
+.upload__inner {
+    background-color: #fff;
+    border: 1px solid #d7d7d7;
+    margin-bottom: 110px;
+}
+
+.upload__title {
+    padding: 20px 10px 20px 30px;
+    font-size: 24px;
+    @include f500;
+    color: #263238;
+    border-bottom: 1px solid #d7d7d7;
+
+}
+.upload__content {
+    padding: 45px 50px 65px 45px;
+}
+.upload__line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    label {
+        max-width: 175px;
+        width: 100%;
+        padding-right: 15px;
+        margin-right: 19px;
+        color: #444444;
+        span {
+            color: #8bc34a;
+        }
+        
+    }
+    textarea, select, input {
+        width: 100%;
+        display: block;
+        background-color: #f9f9f9;
+        border: 1px solid #d8d8d8;
+        outline-color: #546e7a;
+        padding-left: 18px;
+
+    }
+    select, input {
+        height: 40px;
+        font-size: 15px;
+        &::placeholder {
+            color: #707070;
+        }
+        
+    }
+}
+
+.upload__line textarea {
+    height: 150px;
+    resize: none;
+    padding-top: 7px;
+}
+
+.upload__line-textarea {
+    align-items: start;
+}
+
+// .upload__line-file {
+//     input {
+//         padding-top: 7px;
+//     }
+// }
+
+.jq-selectbox {
+    width: 100%;
+}
+
+
+
+.jq-selectbox__select {
+    height: 40px;
+    padding: 0 18px;
+    border: 1px solid #d8d8d8;
+    border-bottom-color: #d8d8d8;
+    border-radius: 0;
+    background: #f9f9f9;
+    box-shadow: none;
+    font: 'Roboto-Regular', sans-serif;
+    color:#707070;
+    text-shadow: none;
+    line-height: 40px;
+}
+
+.jq-selectbox__trigger {
+    border-left: none;
+}
+
+.jq-selectbox__trigger-arrow {
+    border: none;
+    font-size: 15px;
+    right: 20px;
+    line-height: 40px;
+    top: 0;
+    &::before {
+        font-family: 'icomoon';
+        content: "\f0d7"; 
+    }
+}
+
+.jq-selectbox__dropdown {
+    top: 38px !important;
+}
+
+
+
+.jq-file {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    height: 40px;
+    background-color: #f9f9f9;
+    border: 1px solid #d7d7d7;
+    padding: 0 18px;
+}
+
+.jq-file__name {
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    margin-left: 100px;
+    border: none;
+    border-bottom-color: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    font-size: 12px;
+    line-height: 40px;
+    color: #707070;
+}
+
+.jq-file__browse {
+    top: 5px;
+    right: auto;
+    left: 9px;
+    padding: 0 12px;
+    border: 1px solid #d7d7d7;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: none;
+    text-shadow: none;
+    font-size: 12px;
+    line-height: 26px;
+    color: #444;
+}
+
+// end upload-products
+
+
+
+// start withdrawals
+.withdrawals {
+    background-color: #f4f6f5;
+    padding: 40px 0 110px;
+}
+
+.withdrawals__inner {
+    display: flex;
+}
+
+.withdrawals__title {
+    font-size: 24px;
+    @include f500;
+    color: #263238;
+    border-bottom: 1px solid #d8d8d8;
+    padding: 22px 30px;
+}
+
+.withdrawals__earning {
+    width: 50%;
+    margin-right: 30px;
+    background-color: #fff;
+    border: 1px solid #d8d8d8;
+    height: 100%;
+   form {
+    padding: 27px 40px 50px;
+   }
+}
+
+.earning__item {
+    margin-bottom: 30px;
+    label {
+        display: block;
+        @include f700;
+        color: #000;
+        font-size: 16px;
+        margin-bottom: 20px;
+        span {
+            color: #8bc34a;
+        }
+    }
+    input {
+        padding-right: 20px;
+        height: 40px;
+        width: 100%;
+        display: block;
+        background-color: #f9f9f9;
+        border: 1px solid #d8d8d8;
+        outline-color: #546e7a;
+        padding-left: 18px;
+    }
+}
+
+.withdrawals__history {
+    width: 50%;
+    background-color: #fff;
+    border: 1px solid #d8d8d8;
+    height: 100%;
+}
+
+.withdrawals__lines {
+    padding: 27px 40px 50px;
+}
+
+.withdrawals__line {
+    display: flex;
+    font-size: 13px;
+    color: #444;
+    padding: 10px 0px;
+    &:nth-child(odd){
+        background-color: #f9f9f9;
+    }
+    &-date {
+        max-width: 154px;
+        padding-left: 20px;
+        font-weight: 500;
+        width: 100%;
+    }
+    &-mail {
+        max-width: 178px;
+        width: 100%;
+    }
+    &-summ {
+        max-width: 68px;
+        font-weight: 700;
+        width: 100%;
+    }
+    &-status {
+        max-width: 88px;
+        width: 100%;
+        font-weight: 700;
+    }
+}
+
+.status__paid {
+    color: $green;
+}
+
+.jq-selectbox.jqselect {
+    max-width: 540px
+}
+
+.jq-selectbox__select {
+    padding-right: 25px;
+}
+
+// end withdrawals
 
 
 @import '_media';
